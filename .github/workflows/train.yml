@@ -1,0 +1,15 @@
+name: Daily Fraud Model Training
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # 8am UTC daily
+  workflow_dispatch:       # lets you trigger it manually too
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger training
+        run: |
+          curl -X POST https://shop-app1-10.onrender.com/train \
+            -H "X-Scoring-Secret: my-scoring-secret-12345"
