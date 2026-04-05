@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Trigger training
         run: |
-          curl -X POST https://shop-app1-10.onrender.com/train \
+          curl -X POST https://shop-scoring-api.onrender.com/train \
             -H "X-Scoring-Secret: my-scoring-secret-12345"
